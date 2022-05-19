@@ -5,12 +5,15 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator animator;
     private bool small = false;
     private float time = 0f;
+    public static readonly string SMALLER_PADDLE = "small";
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnMouseDrag()
@@ -22,9 +25,12 @@ public class Paddle : MonoBehaviour
 
     public void smallerPaddle()
     {
-        gameObject.transform.localScale = new Vector2(1f, 0.5f);
-        small = true;
-        time = 0f;
+        if(!small) {
+            small = true;
+            animator.SetBool(SMALLER_PADDLE, true);
+        }else{
+            time = 0f;
+        }
     }
 
     void Update() 
@@ -32,7 +38,7 @@ public class Paddle : MonoBehaviour
         if(small) {
             time += Time.deltaTime;
             if(time > 10f) {
-                gameObject.transform.localScale = new Vector2(1.5f, 0.5f);
+                animator.SetBool(SMALLER_PADDLE, false);
                 small = false;
                 time = 0f;
             }
