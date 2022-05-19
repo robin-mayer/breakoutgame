@@ -60,8 +60,12 @@ PrefabInstance:
       value: SmallerPaddleBrick
       objectReference: {fileID: 0}
     - target: {fileID: 6686210924565058438, guid: a77682e2f6fe477408148765b83f2634, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5159dcb7187236d4eb6176a90c6e1c77, type: 3}
+    - target: {fileID: 6686210924565058438, guid: a77682e2f6fe477408148765b83f2634, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.8649349
       objectReference: {fileID: 0}
     - target: {fileID: 6686210924565058438, guid: a77682e2f6fe477408148765b83f2634, type: 3}
       propertyPath: m_Color.g
@@ -69,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6686210924565058438, guid: a77682e2f6fe477408148765b83f2634, type: 3}
       propertyPath: m_Color.r
-      value: 0.4431219
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a77682e2f6fe477408148765b83f2634, type: 3}

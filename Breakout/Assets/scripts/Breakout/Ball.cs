@@ -9,9 +9,14 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rigidBody;
     private float time = 0f;
 
-    void Start()
+
+    void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
         Vector2 speed = new Vector2(Random.Range(-25f, 25f), initialForce);
         rigidBody.AddForce(speed);
     }

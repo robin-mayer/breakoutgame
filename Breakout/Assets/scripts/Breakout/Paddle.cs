@@ -8,7 +8,7 @@ public class Paddle : MonoBehaviour
     private bool small = false;
     private float time = 0f;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -22,7 +22,7 @@ public class Paddle : MonoBehaviour
 
     public void smallerPaddle()
     {
-        gameObject.transform.localScale = new Vector2(3.5f, 0.5f);
+        gameObject.transform.localScale = new Vector2(1f, 0.5f);
         small = true;
         time = 0f;
     }
@@ -32,7 +32,7 @@ public class Paddle : MonoBehaviour
         if(small) {
             time += Time.deltaTime;
             if(time > 10f) {
-                gameObject.transform.localScale = new Vector2(5f, 0.5f);
+                gameObject.transform.localScale = new Vector2(1.5f, 0.5f);
                 small = false;
                 time = 0f;
             }

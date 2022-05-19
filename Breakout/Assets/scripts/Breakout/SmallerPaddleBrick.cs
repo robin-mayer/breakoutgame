@@ -8,7 +8,7 @@ public class SmallerPaddleBrick : MonoBehaviour
     private bool isQuitting = false;
     private Paddle paddle;
 
-    void Start()
+    void Awake()
     {
         paddle = GameObject.FindGameObjectWithTag("Paddle").GetComponent<Paddle>();
     }

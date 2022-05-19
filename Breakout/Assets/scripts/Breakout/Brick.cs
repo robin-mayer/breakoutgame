@@ -6,20 +6,24 @@ public class Brick : MonoBehaviour
 {
 
     public int lives = 2;
-    private float opacitySteps;
-    private float opacity = 1.0f;
-    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    public static readonly string BREAK_TRIGGER = "break";
+    public static readonly string DESTROY_TRIGGER = "destroy";
+    public static readonly string BALL_TAG = "Ball";
 
 
-    void Start()
+
+
+    void Awake()
     {
-        opacitySteps = 1f / lives;
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        die();
+        if(collision.collider.tag.Equals(BALL_TAG)){
+            die();
+        }
     }
 
     public void looseLife()
@@ -30,10 +34,12 @@ public class Brick : MonoBehaviour
     private void die()
     {
         lives--;
-        opacity -= opacitySteps;
-        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity);
+        if(lives < 2) {
+            animator.SetTrigger(BREAK_TRIGGER);
+        }
         if(lives < 1) {
-            Destroy(gameObject);
+            animator.SetTrigger(DESTROY_TRIGGER);
+            Destroy(gameObject, 1);
         }
     }
 }

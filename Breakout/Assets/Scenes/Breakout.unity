@@ -3614,5 +3614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7767504745875112757, guid: bcbb6a6aaba19eb4f80bda897bc55060, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bcbb6a6aaba19eb4f80bda897bc55060, type: 3}
