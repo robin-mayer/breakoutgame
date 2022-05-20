@@ -38,8 +38,7 @@ public class Ball : MonoBehaviour
         rigidBody.AddForce(force);
 
         if(collision.collider.tag.Equals("TopWall")) {
-            Debug.Log("You won");
-            Destroy(gameObject);
+            GameController.win();
         }
     }
 

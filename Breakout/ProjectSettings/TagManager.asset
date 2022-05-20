@@ -10,6 +10,9 @@ TagManager:
   - BrickPosition
   - Paddle
   - Brick
+  - Points
+  - Lifes
+  - WinLost
   layers:
   - Default
   - TransparentFX

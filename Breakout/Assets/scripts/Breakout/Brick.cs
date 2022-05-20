@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
 
-    public int lives = 2;
-    private Animator animator;
     public static readonly string BREAK_TRIGGER = "break";
     public static readonly string DESTROY_TRIGGER = "destroy";
     public static readonly string BALL_TAG = "Ball";
-
-
+    public int lives = 2;
+    private Animator animator;
+    
 
 
     void Awake()
@@ -33,6 +33,7 @@ public class Brick : MonoBehaviour
 
     private void die()
     {
+        GameController.addPoint();
         lives--;
         if(lives < 2) {
             animator.SetTrigger(BREAK_TRIGGER);
